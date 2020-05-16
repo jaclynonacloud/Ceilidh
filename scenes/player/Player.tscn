@@ -21,6 +21,7 @@ radius = 50.1603
 "player",
 ]]
 script = ExtResource( 2 )
+move_speed = 5.0
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )

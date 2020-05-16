@@ -1,9 +1,30 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scenes/player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://graphics/tilesets/RoomDev.tres" type="TileSet" id=2]
 [ext_resource path="res://scenes/effects/Music.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/entities/static/Steamy.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/rooms/components/parallax_background/ParallaxBackground.tscn" type="PackedScene" id=5]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Camera2D
+
+export var target_path:NodePath
+
+var target:Node
+
+func _ready():
+	target = get_node_or_null(target_path)
+
+
+func _process(delta):
+	if target == null: return
+	
+	var viewport = get_viewport()
+	var offset = viewport.size / 2
+	
+	self.transform.origin = lerp(self.transform.origin, target.transform.origin - offset, 0.6)
+"
 
 [node name="Start" type="Node2D"]
 
@@ -11,6 +32,8 @@
 anchor_mode = 0
 current = true
 smoothing_enabled = true
+script = SubResource( 1 )
+target_path = NodePath("../Player")
 
 [node name="Background" type="TileMap" parent="."]
 tile_set = ExtResource( 2 )
@@ -26,3 +49,7 @@ position = Vector2( 624, 352 )
 
 [node name="Music" parent="." instance=ExtResource( 3 )]
 position = Vector2( 608, 256 )
+
+[node name="ParallaxBackground" parent="." instance=ExtResource( 5 )]
+auto_x_speed = 120.0
+auto_y_speed = 50.0
