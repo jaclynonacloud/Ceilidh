@@ -13,9 +13,15 @@ _global_script_classes=[ {
 "class": "Effect",
 "language": "GDScript",
 "path": "res://scenes/effects/Effect.gd"
+}, {
+"base": "Node",
+"class": "Entity",
+"language": "GDScript",
+"path": "res://scenes/entities/Entity.gd"
 } ]
 _global_script_class_icons={
-"Effect": ""
+"Effect": "",
+"Entity": ""
 }
 
 [application]
