@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://graphics/textures/spritesheets/effects.png" type="Texture" id=1]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Effect
+
+
+"
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 13, 13 )
+
+[node name="Music" type="StaticBody2D"]
+script = SubResource( 1 )
+readable = "EFFECT_MUSIC"
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 3 )
