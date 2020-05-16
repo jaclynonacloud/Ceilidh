@@ -10,6 +10,7 @@
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
 current = true
+smoothing_enabled = true
 
 [node name="Background" type="TileMap" parent="."]
 tile_set = ExtResource( 2 )
