@@ -8,9 +8,14 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "Node",
+"class": "Effect",
+"language": "GDScript",
+"path": "res://scenes/effects/Effect.gd"
+} ]
 _global_script_class_icons={
-
+"Effect": ""
 }
 
 [application]
