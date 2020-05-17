@@ -18,10 +18,16 @@ _global_script_classes=[ {
 "class": "Entity",
 "language": "GDScript",
 "path": "res://scenes/entities/Entity.gd"
+}, {
+"base": "StaticBody2D",
+"class": "NPC",
+"language": "GDScript",
+"path": "res://scenes/entities/npcs/NPC.gd"
 } ]
 _global_script_class_icons={
 "Effect": "",
-"Entity": ""
+"Entity": "",
+"NPC": ""
 }
 
 [application]

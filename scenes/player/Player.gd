@@ -34,3 +34,4 @@ func _on_area_entered(body:Node):
 	
 func _on_area_exited(body:Node):
 	Ceilidh.emit_signal("area_exited", self, body)
+	Ceilidh.emit_signal("area_exited", self, body)
