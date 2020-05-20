@@ -15,6 +15,12 @@ func _ready():
 	connect("collision_exited", self, "_on_trigger_exited", ["collision"])
 	
 	
+func _process(delta):
+	# influence tileset
+	print(delta)
+	
+	
+	
 func _on_trigger_entered(caller:Node, callee:Node, type:String):
 	var is_player:bool = caller.is_in_group("player")
 	match type:
