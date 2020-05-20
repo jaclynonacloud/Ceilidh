@@ -30,16 +30,9 @@ position = Vector2( 704, 272 )
 position = Vector2( 624, 352 )
 move_speed = 1.5
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
-current = true
-zoom = Vector2( 0.25, 0.25 )
-smoothing_enabled = true
-smoothing_speed = 15.0
-
 [node name="Music" parent="." instance=ExtResource( 3 )]
 position = Vector2( 608, 256 )
 
 [node name="Jazzaphone" parent="." instance=ExtResource( 5 )]
 position = Vector2( 560, 288 )
-readable = "NPC_JAZZAPHONE"
 navigation_path = NodePath("../Navigation2D")

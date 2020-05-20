@@ -18,4 +18,3 @@ func _process(delta):
 	current_offset.y = lerp(current_offset.y, clamp(0, current_offset.y + auto_y_speed * delta, background_size.y), 0.5)
 	
 	p_layer.motion_offset = current_offset
-	print(offset)

@@ -1,6 +1,6 @@
-[gd_resource type="TileSet" load_steps=6 format=2]
+[gd_resource type="TileSet" load_steps=7 format=2]
 
-[ext_resource path="res://graphics/textures/spritesheets/room-dev.png" type="Texture" id=1]
+[ext_resource path="res://graphics/textures/spritesheets/mush-room.png" type="Texture" id=1]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
@@ -15,6 +15,17 @@ polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
 [sub_resource type="NavigationPolygon" id=4]
 vertices = PoolVector2Array( 0, 0, 16, 16, 16, 16, 0, 16 )
 polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+
+[sub_resource type="GDScript" id=5]
+script/source = "extends TileSet
+
+func _init():
+	print(\"Update me!\")
+
+func change_tile_state(x:int, y:int):
+	print(\"Change state: %s, %s\" % [x,y])
+	pass
+"
 
 [resource]
 0/name = "solid"
@@ -91,3 +102,4 @@ polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
 5/navigation = SubResource( 4 )
 5/shapes = [  ]
 5/z_index = 0
+script = SubResource( 5 )
